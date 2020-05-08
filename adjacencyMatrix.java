@@ -7,6 +7,7 @@ public class adjacencyMatrix {
     private int[][] outgoingEdge = new int[5][5];
     private int[][] dfsMatrix = new int[5][5]; //for DFS
     private Map<String,Integer> ref= new HashMap<String,Integer>();
+    static String[] vertices = new String[] {"AU","BE","DK","EG","HK"};
 
     public void initialize(){
         ref.put("AU",0);
@@ -87,7 +88,6 @@ public class adjacencyMatrix {
     }
 
     public void depthFirstSearch(){
-        String[] vertices = new String[] {"AU","BE","DK","EG","HK"};
         dfsMatrixClearer();
 
         for(int x=0;x<5;++x){

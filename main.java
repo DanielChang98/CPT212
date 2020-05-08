@@ -9,5 +9,6 @@ public class main {
         adjacencyMatrix obj = new adjacencyMatrix();
         obj.initialize();
         obj.stronglyConnected();
+        obj.stronglyConnected();
     }
 }
