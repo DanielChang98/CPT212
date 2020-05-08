@@ -46,10 +46,7 @@ public class adjacencyMatrix {
     }
 
     public void displayIncomingMatrix(){System.out.println(Arrays.deepToString(incomingEdge));}
-    public void displayOutgoingMatrix(){
-        System.out.println(Arrays.deepToString(outgoingEdge));
-    }
-
+    public void displayOutgoingMatrix(){System.out.println(Arrays.deepToString(outgoingEdge));}
     public boolean isOutgoing(String origin,String destination){return outgoingEdge[ref.get(origin)][ref.get(destination)] != 0;}
     public boolean isIncoming(String origin,String destination){return incomingEdge[ref.get(origin)][ref.get(destination)] != 0;}
 
@@ -91,9 +88,7 @@ public class adjacencyMatrix {
 
     public void depthFirstSearch(){
         String[] vertices = new String[] {"AU","BE","DK","EG","HK"};
-
-        for (int[] i:dfsMatrix)
-            Arrays.fill(i,0);
+        dfsMatrixClearer();
 
         for(int x=0;x<5;++x){
             System.out.print("\n\nFor starting vertex " + vertices[x]);
@@ -128,6 +123,11 @@ public class adjacencyMatrix {
         }
         outgoingEdge[source][destination]=1;
         System.out.println("An edge is generated between " + getKeyByValue(ref,source) + " and " + getKeyByValue(ref,destination));
+    }
+
+    public void dfsMatrixClearer(){
+        for (int[] i:dfsMatrix)
+            Arrays.fill(i,0);
     }
 
     public boolean dfsMatrixChecker(){
