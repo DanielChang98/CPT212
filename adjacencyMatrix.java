@@ -72,7 +72,7 @@ public class adjacencyMatrix {
 
     //Function 1: Determine if strongly connected. Will be using DFS
     public void stronglyConnected(){
-        boolean stronglyConnect = false;
+        boolean stronglyConnect;
         do {
             depthFirstSearch();
             stronglyConnect = dfsMatrixChecker();
