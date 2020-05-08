@@ -97,14 +97,14 @@ public class adjacencyMatrix {
         System.out.print("\n" + Arrays.deepToString(dfsMatrix));
     }
 
-    public void DFS(String vertex,int vertexArrayPosition){
+    public void DFS(String vertex,int startingVertexArrayPosition){
         int index = ref.get(vertex);
-        dfsMatrix[vertexArrayPosition][index] = 1;
+        dfsMatrix[startingVertexArrayPosition][index] = 1;
         ArrayList<String> vertexIsAdjacentTo = adjacentVertices(vertex);
         System.out.print("\n" + vertex + " is adjacent to: " + vertexIsAdjacentTo);
         for(String i:vertexIsAdjacentTo){
-            if (dfsMatrix[vertexArrayPosition][ref.get(i)]==0)
-                DFS(i,vertexArrayPosition);
+            if (dfsMatrix[startingVertexArrayPosition][ref.get(i)]==0)
+                DFS(i,startingVertexArrayPosition);
         }
     }
 
